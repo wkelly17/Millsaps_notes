@@ -9,11 +9,43 @@
   <body>
     <!-- ../ = go back -->
     <!-- / forward from where I"m from -->
-    <div class="mx-auto">
+    <nav class="nav">
+      <ul class="topNav">
+        <li><a href="#inheritance" class="navlink">Inheritance</a></li>
+        <li><a href="#cascadeSummary" class="navlink">Cascade Summary</a></li>
+        <li><a href="#@rules" class="navlink">@rules/basic functions</a></li>
+        <li>
+          <a href="#shorthands" class="navlink">Shorthands/Properties intro</a>
+        </li>
+        <li>
+          <a href="#outerDisplayModels" class="navlink"
+            >Outer Display Models - Block and Inline</a
+          >
+        </li>
+        <li>
+          <a href="#InnerDisplayModels" class="navlink"
+            >InnerDisplayModels (Brief)</a
+          >
+        </li>
+        <li>
+          <a href="#margins" class="navlink">Margins</a>
+        </li>
+        <li>
+          <a href="#paddings" class="navlink">Padding</a>
+        </li>
+        <li>
+          <a href="#borders" class="navlink">Borders</a>
+        </li>
+        <li>
+          <a href="#Boxmodel" class="navlink">The box model</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="mx-auto" style="padding-top: 10px">
       <!-- ! -------------- INHERITANCE -------------- -->
       <!-- https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#understanding_inheritance -->
       <section class="example">
-        <h2 id="" title="" class="heading">Inheritance</h2>
+        <h2 id="inheritance" title="" class="heading">Inheritance</h2>
 
         <ul class="main">
           <li>Child One</li>
@@ -79,7 +111,7 @@
         </p>
       </section>
 
-      <section>
+      <section id="cascadeSummary">
         <h2 class="heading">
           Summary of of the cascade (Later ones override the first ones in this
           list)
@@ -143,7 +175,7 @@
           >
         </div>
       </section>
-      <section>
+      <section id="@rules">
         <h2 class="heading">@ rules, basic functions</h2>
 
         <div>
@@ -231,7 +263,7 @@
         </div>
       </section>
       <section>
-        <h2 class="heading">Introduction to Properties</h2>
+        <h2 id="shorthands" class="heading">Introduction to Properties</h2>
         <div>
           <h3>A note on ShortHands</h3>
 
@@ -298,7 +330,7 @@
             background-attachment: fixed;
           </pre>
         </div>
-        <div>
+        <div id="outerDisplayModels">
           <h2>
             Outer Display Models and Intro to Box Model (click boxes for
             differences)
@@ -388,7 +420,7 @@
           </div>
           <div id="theBoxModel">
             <h2>The Box Model</h2>
-            <img src="./media/box-model.png" alt="boxModel" />
+            <img src="./CssNotes/media/box-model.png" alt="boxModel" />
             <h3>The Standard Box model</h3>
             <div id="StandardBoxModel">
               <p>
@@ -415,7 +447,7 @@
               box.
 
               <img
-                src="./media/standard-box-model.png"
+                src="./CssNotes/media/standard-box-model.png"
                 alt="Standard Box Model"
               />
             </div>
@@ -428,7 +460,7 @@
                 from the content area
               </p>
               <img
-                src="./media/alternate-box-model.png"
+                src="./CssNotes/media/alternate-box-model.png"
                 alt="alternate box model"
               />
               <p>To turn on the alternate box model, the property is:</p>
@@ -452,224 +484,223 @@
 
               <b>Tip! Visualize the box model using your browser's dev tools</b>
             </div>
-            <div id="MarginPaddingBorders">
+            <div id="margin/padding/border">
               <h2>Margin, padding, and borders</h2>
-              <h3>Margin</h3>
-              <ul>
-                <li>
-                  Margin is invisible space around your box that pushes other
-                  elements away
-                </li>
-                <li>Can be positive or negative (more often pos)</li>
-                <li>Negative can be used to cause overlapping</li>
-                <li>
-                  Uses the shorthand <code>margin</code> property, or the
-                  <code
-                    >margin-top, margin-right, margin-bottom, or margin-left </code
-                  >properties
-                </li>
-              </ul>
-              <div class="flex">
-                <div class="border" style="padding: 5px; background: teal">
-                  <div class="marginbox">
-                    I am the content margin references
+              <div id="margins">
+                <h3>Margin</h3>
+                <ul>
+                  <li>
+                    Margin is invisible space around your box that pushes other
+                    elements away
+                  </li>
+                  <li>Can be positive or negative (more often pos)</li>
+                  <li>Negative can be used to cause overlapping</li>
+                  <li>
+                    Uses the shorthand <code>margin</code> property, or the
+                    <code
+                      >margin-top, margin-right, margin-bottom, or margin-left </code
+                    >properties
+                  </li>
+                </ul>
+                <div class="flex">
+                  <div class="border" style="padding: 5px; background: teal">
+                    <div class="marginbox">
+                      I am the content margin references
+                    </div>
                   </div>
-                </div>
 
-                <div>
-                  <div style="margin-left: 5px">
-                    <label for="marginTop" class="block">Margin Top </label>
-                    <input
-                      type="number"
-                      id="margin-top"
-                      name="marginTop"
-                      class="margin-controller"
-                      min="-500"
-                      max="500"
-                      value="0"
-                    />
-
-                    <label for="marginRight" class="block">Margin Right </label>
-                    <input
-                      type="number"
-                      name="marginRight"
-                      class="margin-controller"
-                      min="-500"
-                      max="500"
-                      value="0"
-                    />
-
-                    <label for="marginBottom" class="block"
-                      >Margin Bottom
-                    </label>
-                    <input
-                      type="number"
-                      name="marginBottom"
-                      class="margin-controller"
-                      min="-500"
-                      max="500"
-                      value="0"
-                    />
-
-                    <label for="marginLeft" class="block">Margin Left </label>
-                    <input
-                      type="number"
-                      name="marginLeft"
-                      class="margin-controller"
-                      min="-500"
-                      max="500"
-                      value="0"
-                    />
-
-                    <label for="marginTop" class="block">All Margins</label>
-                    <input
-                      type="number"
-                      id="margin-top"
-                      name="margin"
-                      class="margin-controller"
-                      min="-500"
-                      max="500"
-                      value="0"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div id="collapsingMargins">
-                <div id="outerBox" class="border mt-2">
-                  <div class="box box2" style="margin-bottom: 50px"></div>
-                  <div class="box box3" style="margin-top: 30px"></div>
-                </div>
-              </div>
-              <h3>Padding</h3>
-              <ul>
-                <li>
-                  The padding sits between the border and the content area.
-                </li>
-                <li>
-                  Unlike margins you cannot have negative amounts of padding, so
-                  the value must be 0 or a positive value
-                </li>
-                <li>
-                  Any background applied to your element will display behind the
-                  padding, and it is typically used to push the content away
-                  from the border.
-                </li>
-                <li>Same shorthand as margin</li>
-              </ul>
-              <div class="flex" style="margin-top: 40px">
-                <div
-                  class="paddingbox"
-                  style="
-                    background: #ccc;
-                    padding: 50px;
-                    border: solid yellow 10px;
-                  "
-                >
-                  <span class="normal"
-                    >See my gray padding grow and push these words away from the
-                    yellow border</span
-                  >
-                </div>
-                <div>
                   <div>
-                    <label for="paddingTop">padding Top </label>
-                    <input
-                      type="number"
-                      id="padding-top"
-                      name="paddingTop"
-                      class="padding-controller"
-                      min="-500"
-                      max="500"
-                      value="50"
-                    />
+                    <div style="margin-left: 5px">
+                      <label for="marginTop" class="block">Margin Top </label>
+                      <input
+                        type="number"
+                        id="margin-top"
+                        name="marginTop"
+                        class="margin-controller"
+                        min="-500"
+                        max="500"
+                        value="0"
+                      />
 
-                    <label for="paddingRight">padding Right </label>
-                    <input
-                      type="number"
-                      name="paddingRight"
-                      class="padding-controller"
-                      min="-500"
-                      max="500"
-                      value="50"
-                    />
+                      <label for="marginRight" class="block"
+                        >Margin Right
+                      </label>
+                      <input
+                        type="number"
+                        name="marginRight"
+                        class="margin-controller"
+                        min="-500"
+                        max="500"
+                        value="0"
+                      />
 
-                    <label for="paddingBottom">padding Bottom </label>
-                    <input
-                      type="number"
-                      name="paddingBottom"
-                      class="padding-controller"
-                      min="-500"
-                      max="500"
-                      value="50"
-                    />
+                      <label for="marginBottom" class="block"
+                        >Margin Bottom
+                      </label>
+                      <input
+                        type="number"
+                        name="marginBottom"
+                        class="margin-controller"
+                        min="-500"
+                        max="500"
+                        value="0"
+                      />
 
-                    <label for="paddingLeft">padding Left </label>
-                    <input
-                      type="number"
-                      name="paddingLeft"
-                      class="padding-controller"
-                      min="-500"
-                      max="500"
-                      value="50"
-                    />
+                      <label for="marginLeft" class="block">Margin Left </label>
+                      <input
+                        type="number"
+                        name="marginLeft"
+                        class="margin-controller"
+                        min="-500"
+                        max="500"
+                        value="0"
+                      />
+
+                      <label for="marginTop" class="block">All Margins</label>
+                      <input
+                        type="number"
+                        id="margin-top"
+                        name="margin"
+                        class="margin-controller"
+                        min="-500"
+                        max="500"
+                        value="0"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div id="collapsingMargins">
+                  <h3>Collapsing Margins: (Top and bottom only)</h3>
+                  <p>
+                    When a top and bottom margin overlap, only the larger of the
+                    2 is taken adn the margins are "collapsed"; If one margin is
+                    negative, it subtracts for the other;
+                  </p>
+
+                  <div id="outerBox" class="border mt-2">
+                    <div class="box box2" style="margin-bottom: 50px">
+                      My bottom margin is 50px
+                    </div>
+                    <div class="box box3" style="margin-top: 30px">
+                      My top margin is 30px; But if you inspect in dev tools,
+                      the gap is only 50
+                    </div>
                   </div>
                 </div>
               </div>
-              <h3>Border</h3>
-              <ul>
-                <li>
-                  The border is drawn between the margin and the padding of a
-                  box.
-                </li>
-                <li>
-                  If you are using the standard box model, the size of the
-                  border is added to the width and height of the box. I
-                </li>
-                <li>
-                  If you are using the alternative box model then the size of
-                  the border makes the content box smaller as it takes up some
-                  of that available width and height.
-                </li>
-                <li>
-                  For styling borders, there are a large number of properties —
-                  there are four borders, and each border has a style, width and
-                  color that we might want to manipulate.
-                </li>
-                <li>
-                  The same top, right, bottom, left shorthand applies; You'll
-                  often seem somethign like
-                  <code>border: solid 1px blue</code> as a shorthand as well;
-                </li>
-              </ul>
+
+              <div id="paddings">
+                <h3>Padding</h3>
+                <ul>
+                  <li>
+                    The padding sits between the border and the content area.
+                  </li>
+                  <li>
+                    Unlike margins you cannot have negative amounts of padding,
+                    so the value must be 0 or a positive value
+                  </li>
+                  <li>
+                    Any background applied to your element will display behind
+                    the padding, and it is typically used to push the content
+                    away from the border.
+                  </li>
+                  <li>Same shorthand as margin</li>
+                </ul>
+                <div class="flex" style="margin-top: 40px">
+                  <div
+                    class="paddingbox"
+                    style="
+                      background: #ccc;
+                      padding: 50px;
+                      border: solid yellow 10px;
+                    "
+                  >
+                    <span class="normal"
+                      >See my gray padding grow and push these words away from
+                      the yellow border</span
+                    >
+                  </div>
+                  <div>
+                    <div>
+                      <label for="paddingTop">padding Top </label>
+                      <input
+                        type="number"
+                        id="padding-top"
+                        name="paddingTop"
+                        class="padding-controller"
+                        min="-500"
+                        max="500"
+                        value="50"
+                      />
+
+                      <label for="paddingRight">padding Right </label>
+                      <input
+                        type="number"
+                        name="paddingRight"
+                        class="padding-controller"
+                        min="-500"
+                        max="500"
+                        value="50"
+                      />
+
+                      <label for="paddingBottom">padding Bottom </label>
+                      <input
+                        type="number"
+                        name="paddingBottom"
+                        class="padding-controller"
+                        min="-500"
+                        max="500"
+                        value="50"
+                      />
+
+                      <label for="paddingLeft">padding Left </label>
+                      <input
+                        type="number"
+                        name="paddingLeft"
+                        class="padding-controller"
+                        min="-500"
+                        max="500"
+                        value="50"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="borders">
+                <h3>Border</h3>
+                <ul>
+                  <li>
+                    The border is drawn between the margin and the padding of a
+                    box.
+                  </li>
+                  <li>
+                    If you are using the standard box model, the size of the
+                    border is added to the width and height of the box. I
+                  </li>
+                  <li>
+                    If you are using the alternative box model then the size of
+                    the border makes the content box smaller as it takes up some
+                    of that available width and height.
+                  </li>
+                  <li>
+                    For styling borders, there are a large number of properties
+                    — there are four borders, and each border has a style, width
+                    and color that we might want to manipulate.
+                  </li>
+                  <li>
+                    The same top, right, bottom, left shorthand applies; You'll
+                    often seem somethign like
+                    <code>border: solid 1px blue</code> as a shorthand as well;
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </section>
     </div>
 
-    <script src="/index.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>
-
-<!-- <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CSS Notes</title>
-  </head>
-  <body>
-    <h1 style="background-color: darkblue; color: white">
-      I am built with inline styles
-    </h1>
-    <h2>I am styled with the tag below</h2>
-    <h3 class="class" id="id">class and ID</h3>
-
-    <style>
-      h2 {
-        padding: 50px;
-        background: lightseagreen;
-      }
-    </style>
-  </body>
-</html> -->
