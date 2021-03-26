@@ -1,0 +1,675 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Millsaps Notes</title>
+  </head>
+  <body>
+    <!-- ../ = go back -->
+    <!-- / forward from where I"m from -->
+    <div class="mx-auto">
+      <!-- ! -------------- INHERITANCE -------------- -->
+      <!-- https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#understanding_inheritance -->
+      <section class="example">
+        <h2 id="" title="" class="heading">Inheritance</h2>
+
+        <ul class="main">
+          <li>Child One</li>
+          <li>
+            Child Two
+            <ul>
+              <li>2.1 (Inheriting from parent)</li>
+              <li>2.2</li>
+            </ul>
+          </li>
+          <li>
+            Item Three
+            <ul class="special">
+              <li>
+                3.1
+                <ul>
+                  <li>3.1.1</li>
+                  <li>3.1.2</li>
+                </ul>
+              </li>
+              <li>3.2</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>
+          Some props that inherit (obviously things that border, padding, and
+          width do not make sense to inherit) (not exhaustive)
+        </h3>
+        <div class="flex">
+          <ul>
+            <li>color</li>
+            <li>cursor</li>
+            <li>font-family</li>
+            <li>font-size</li>
+            <li>font-style</li>
+            <li>font-variant</li>
+            <li>font-weight</li>
+            <li>font-size-adjust</li>
+            <li>font-stretch</li>
+            <li>font</li>
+            <li>letter-spacing</li>
+            <li>line-height</li>
+            <li>list-style-image</li>
+            <li>list-style-position</li>
+            <li>list-style-type</li>
+            <li>list-style</li>
+          </ul>
+          <ul>
+            <li>text-align</li>
+            <li>text-indent</li>
+            <li>text-justify</li>
+            <li>white-space</li>
+            <li>word-break</li>
+            <li>word-spacing</li>
+            <li>word-wrap</li>
+          </ul>
+        </div>
+
+        <p>
+          We can manually control inheritance using the properities of inherit
+          (to force inheritance), initial (to set to initial non-inherited
+          value)
+        </p>
+      </section>
+
+      <section>
+        <h2 class="heading">
+          Summary of of the cascade (Later ones override the first ones in this
+          list)
+        </h2>
+        <ol>
+          <li>Inheritance from parents to children</li>
+          <li>
+            Source Order in the file, (What is last takes priority over what is
+            first IF the specificity is the same. Same applies to order of
+            stylesheets;
+          </li>
+          <li>
+            Specificity
+            <ul>
+              <li>Inline styles = 1000pts</li>
+              <li>Id styles (#) = 100</li>
+              <li>
+                classes (preferred method), attributes and psuedo classes = 10
+                points
+              </li>
+              <li>elements (e.g. h1 {rules}) = 1 points</li>
+            </ul>
+          </li>
+          <li>The "important word" (Most specific. Generally avoid)</li>
+        </ol>
+        <div>
+          <h4>Review</h4>
+          <h3 class="normal">
+            What is going to happen with these two paragraphs in the code block
+            below?
+          </h3>
+
+          <div class="hiddenQ">
+            <span class="better">This is a paragraph.</span>
+            <span class="better" id="winning"
+              >One selector to rule them all!</span
+            >
+          </div>
+          <button data-role="revealAnswer">Toggle answer</button>
+
+          <pre>
+      &lt;p class=&quot;better&quot;&gt;This is a paragraph.&lt;/p&gt;
+      &lt;p class=&quot;better&quot; id=&quot;winning&quot;&gt;One selector to rule them all!&lt;/p&gt;
+            
+        #winning {
+          background-color: red;
+          border: 1px solid black;
+        }
+          
+        .better {
+          background-color: gray;
+          border: none !important;
+        }
+          
+        p {
+          background-color: blue;
+          color: white;
+          padding: 5px;
+        }           
+</pre
+          >
+        </div>
+      </section>
+      <section>
+        <h2 class="heading">@ rules, basic functions</h2>
+
+        <div>
+          <h3 class="">@ rules</h3>
+          <p>Tell CSS how to behave or perform special operations</p>
+          <p>Some common ones include:</p>
+          <ul>
+            <li>
+              @import at top of file = The @import CSS at-rule is used to import
+              style rules from other style sheets. (Can be used to keep sheets
+              separate)
+            </li>
+            <li>
+              @media -most commonly seen; A conditional group rule that will
+              apply its content if the device meets the criteria of the
+              condition defined using a media query.
+            </li>
+            <li>@keyframes - a rule for creating animation sequences</li>
+            <li>@font-face - including an external font (other ways too)</li>
+          </ul>
+          <h4 class="blue slide">
+            I have a @ media query and that will change my color and @keyframes
+            for animation. (Click me to stop moving)
+          </h4>
+          <pre>
+            @media screen and (max-width: 700px) {
+              .blue {
+                color: green;
+              }
+            }
+            @keyframes slide {
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                transform: translateX(200px);
+              }
+            }
+          </pre>
+        </div>
+        <div>
+          <h3>Awareness of Functions</h3>
+          <p>
+            While most values are relatively simple keywords or numeric values,
+            there are some values that take the form of a function. Functions
+            are marked by the ()
+          </p>
+          <a href="https://css-tricks.com/complete-guide-to-css-functions/"
+            >See list here</a
+          >
+          <pre>
+            .box {
+              padding: 10px;
+              width: calc(90% - 30px);
+              background-image: url('path.jpg')
+              filter: drop-shadow(0.25rem 0 0.75rem #ef9035);
+              color: rgb(255, 0, 0)
+            }
+          </pre>
+          <div>
+            <h4>
+              Question: What happens if I give the Computer CSS that it doesn't
+              understand?
+            </h4>
+            <p class="hiddenQ">
+              Nothing! It doesn't break; It just skips it and moves on to the
+              next rule;
+            </p>
+            <button data-role="revealAnswer">Toggle answer</button>
+            <div>
+              <h4>Question: What will happen here?</h4>
+              <pre>
+                .box {
+                  width: 500px;
+                  width: calc(100% - 50px);
+                }
+              </pre>
+              <p class="hiddenQ">
+                The second one will be used IF the browser understands the
+                property;
+              </p>
+              <button data-role="revealAnswer">Toggle answer</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 class="heading">Introduction to Properties</h2>
+        <div>
+          <h3>A note on ShortHands</h3>
+
+          <blockquote>
+            <p>
+              /* In 4-value shorthands like padding and margin, the values are
+              applied in the order top, right, bottom, left (clockwise from the
+              top). There are also other shorthand types, for example 2-value
+              shorthands, which set padding/margin for top/bottom, then
+              left/right */
+            </p>
+            <pre>
+              padding: 10px 15px 15px 5px;
+              
+              IS EQUAL TO:
+              padding-top: 10px;
+              padding-right: 15px;
+              padding-bottom: 15px;
+              padding-left: 5px;
+            </pre>
+          </blockquote>
+
+          <p>
+            And this one line uses a 2 part shorthand to set the Y axis (top and
+            bottom) and then the X axis (right and left)
+          </p>
+          <pre>
+            padding: 10px 20px;
+
+            is EQUAL TO:
+            padding-top: 10px;
+            padding-right: 20px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+          </pre>
+
+          <p>
+            And this one line uses a 3 part shorthand to set the top, Right/Left
+            and then the bottom
+          </p>
+          <pre>
+            padding: 10px 20px 30px;
+
+            IS EQUAL TO:
+            padding-top: 10px;
+            padding-right: 20px;
+            padding-bottom: 30px;
+            padding-left: 20px;
+          </pre>
+
+          <p>And this one line</p>
+          <pre>
+            background: red url(bg-graphic.png) 10px 10px repeat-x fixed;
+          </pre>
+          <p>
+            Equals these five lines: (though I personally don't prefer these
+            sorts of shorthand for things like animation and background)
+          </p>
+          <pre>
+            background-color: red;
+            background-image: url(bg-graphic.png);
+            background-position: 10px 10px;
+            background-repeat: repeat-x;
+            background-attachment: fixed;
+          </pre>
+        </div>
+        <div>
+          <h2>
+            Outer Display Models and Intro to Box Model (click boxes for
+            differences)
+          </h2>
+          <div class="flex justify-apart">
+            <div style="width: 50%">
+              <h4 class="normal">Block</h4>
+              <ul class="oneAtATimeContainers">
+                <li class="opacity0">The box will break onto a new line.</li>
+                <li class="opacity0">
+                  The box will extend in the inline direction to fill the space
+                  available in its container. In most cases this means that the
+                  box will become as wide as its container, filling up 100% of
+                  the space available.
+                </li>
+                <li class="opacity0">
+                  The width and height properties are respected.
+                </li>
+                <li class="opacity0">
+                  Padding, margin and border will cause other elements to be
+                  pushed away from the box
+                </li>
+              </ul>
+            </div>
+            <div style="width: 50%">
+              <h4 class="normal">Inline</h4>
+              <ul class="oneAtATimeContainers">
+                <li class="opacity0">
+                  The box will not break onto a new line..
+                </li>
+                <li class="opacity0">
+                  The width and height properties will not apply.
+                </li>
+                <li class="opacity0">
+                  Vertical padding, margins, and borders will apply but will not
+                  cause other inline boxes to move away from the box.
+                </li>
+                <li class="opacity0">
+                  Horizontal padding, margins, and borders will apply and will
+                  cause other inline boxes to move away from the box.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="blockVsInline">
+            <h3>Example</h3>
+            <p class="border">I am one short paragraph with display block</p>
+            <p class="inline">
+              I am a block element normally, but made inline;
+            </p>
+            <p class="inline">
+              I am a new element, also a block element normally, but made
+              inline; I'm next to the other guy;
+            </p>
+            <p class="border">
+              I am another. Some of my words
+              <span class="normal border boxModel blockToInline"
+                >Have been wrapped</span
+              >
+              in a span. Spans and A tags are inline by default;
+              <button class="block makeBlock" style="margin-top: 5px">
+                Toggle the span to a block and back to inline;
+              </button>
+            </p>
+          </div>
+          <div id="InnerDisplayModels" class="my-3">
+            <h2>Inner Display Models</h2>
+            <p>
+              Note: There are also inner display models; These control how the
+              CHILDREN of an element are rendered. The default is for the
+              children to control themselves, but new properties (display: flex
+              and display:grid) allow a parent to lay out the children as inline
+              or as grid items; We will cover these in depth later; Brief
+              example here
+            </p>
+            <h4>
+              This is a box with display:flex controlling it's children layout
+              model
+            </h4>
+            <div class="flex border" style="padding: 20px">
+              <div class="box box1">I am one div</div>
+              <div class="box box2" style="margin: 100px">I sit inline,</div>
+              <div class="box box3">I am 3</div>
+            </div>
+            <button class="toggleFlex mt-2">Toggle Flex</button>
+            <span>Display is flex</span>
+          </div>
+          <div id="theBoxModel">
+            <h2>The Box Model</h2>
+            <img src="./media/box-model.png" alt="boxModel" />
+            <h3>The Standard Box model</h3>
+            <div id="StandardBoxModel">
+              <p>
+                MDN ~ In the standard box model, if you give a box a width and a
+                height attribute, this defines the width and height of the
+                content box. Any padding and border is then added to that width
+                and height to get the total size taken up by the box.
+              </p>
+
+              <pre>
+                  .box {
+                    width: 350px;
+                    height: 150px;
+                    margin: 10px;
+                    padding: 25px;
+                    border: 5px solid black;
+                  }
+                </pre
+              >
+              The space taken up by our box using the standard box model will
+              actually be 410px (350 + 25 + 25 (LR Padding) + 5 + 5 (LR
+              border)), and the height 210px (150 + 25 + 25 + 5 + 5), as the
+              padding and border are added to the width used for the content
+              box.
+
+              <img
+                src="./media/standard-box-model.png"
+                alt="Standard Box Model"
+              />
+            </div>
+            <div id="alternativeBoxModel">
+              <h3>The Alternative Box Model</h3>
+              <p>
+                Calculating dimensions like that is pretty annoying. As such, an
+                alternative (and more popular box-model was introduced after the
+                standard one); In this model, the padding and border subtracts
+                from the content area
+              </p>
+              <img
+                src="./media/alternate-box-model.png"
+                alt="alternate box model"
+              />
+              <p>To turn on the alternate box model, the property is:</p>
+              <pre>
+                  .box {
+                    box-sizing: border-box;
+                  } 
+                </pre
+              >
+              and many developers have it turned on for every box by selecting
+              every element with this ruleset:
+              <pre>
+                  html {
+                    box-sizing: border-box;
+                  }
+                  *, *::before, *::after {
+                    box-sizing: inherit;
+                  }
+                </pre
+              >
+
+              <b>Tip! Visualize the box model using your browser's dev tools</b>
+            </div>
+            <div id="MarginPaddingBorders">
+              <h2>Margin, padding, and borders</h2>
+              <h3>Margin</h3>
+              <ul>
+                <li>
+                  Margin is invisible space around your box that pushes other
+                  elements away
+                </li>
+                <li>Can be positive or negative (more often pos)</li>
+                <li>Negative can be used to cause overlapping</li>
+                <li>
+                  Uses the shorthand <code>margin</code> property, or the
+                  <code
+                    >margin-top, margin-right, margin-bottom, or margin-left </code
+                  >properties
+                </li>
+              </ul>
+              <div class="flex">
+                <div class="border" style="padding: 5px; background: teal">
+                  <div class="marginbox">
+                    I am the content margin references
+                  </div>
+                </div>
+
+                <div>
+                  <div style="margin-left: 5px">
+                    <label for="marginTop" class="block">Margin Top </label>
+                    <input
+                      type="number"
+                      id="margin-top"
+                      name="marginTop"
+                      class="margin-controller"
+                      min="-500"
+                      max="500"
+                      value="0"
+                    />
+
+                    <label for="marginRight" class="block">Margin Right </label>
+                    <input
+                      type="number"
+                      name="marginRight"
+                      class="margin-controller"
+                      min="-500"
+                      max="500"
+                      value="0"
+                    />
+
+                    <label for="marginBottom" class="block"
+                      >Margin Bottom
+                    </label>
+                    <input
+                      type="number"
+                      name="marginBottom"
+                      class="margin-controller"
+                      min="-500"
+                      max="500"
+                      value="0"
+                    />
+
+                    <label for="marginLeft" class="block">Margin Left </label>
+                    <input
+                      type="number"
+                      name="marginLeft"
+                      class="margin-controller"
+                      min="-500"
+                      max="500"
+                      value="0"
+                    />
+
+                    <label for="marginTop" class="block">All Margins</label>
+                    <input
+                      type="number"
+                      id="margin-top"
+                      name="margin"
+                      class="margin-controller"
+                      min="-500"
+                      max="500"
+                      value="0"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div id="collapsingMargins">
+                <div id="outerBox" class="border mt-2">
+                  <div class="box box2" style="margin-bottom: 50px"></div>
+                  <div class="box box3" style="margin-top: 30px"></div>
+                </div>
+              </div>
+              <h3>Padding</h3>
+              <ul>
+                <li>
+                  The padding sits between the border and the content area.
+                </li>
+                <li>
+                  Unlike margins you cannot have negative amounts of padding, so
+                  the value must be 0 or a positive value
+                </li>
+                <li>
+                  Any background applied to your element will display behind the
+                  padding, and it is typically used to push the content away
+                  from the border.
+                </li>
+                <li>Same shorthand as margin</li>
+              </ul>
+              <div class="flex" style="margin-top: 40px">
+                <div
+                  class="paddingbox"
+                  style="
+                    background: #ccc;
+                    padding: 50px;
+                    border: solid yellow 10px;
+                  "
+                >
+                  <span class="normal"
+                    >See my gray padding grow and push these words away from the
+                    yellow border</span
+                  >
+                </div>
+                <div>
+                  <div>
+                    <label for="paddingTop">padding Top </label>
+                    <input
+                      type="number"
+                      id="padding-top"
+                      name="paddingTop"
+                      class="padding-controller"
+                      min="-500"
+                      max="500"
+                      value="50"
+                    />
+
+                    <label for="paddingRight">padding Right </label>
+                    <input
+                      type="number"
+                      name="paddingRight"
+                      class="padding-controller"
+                      min="-500"
+                      max="500"
+                      value="50"
+                    />
+
+                    <label for="paddingBottom">padding Bottom </label>
+                    <input
+                      type="number"
+                      name="paddingBottom"
+                      class="padding-controller"
+                      min="-500"
+                      max="500"
+                      value="50"
+                    />
+
+                    <label for="paddingLeft">padding Left </label>
+                    <input
+                      type="number"
+                      name="paddingLeft"
+                      class="padding-controller"
+                      min="-500"
+                      max="500"
+                      value="50"
+                    />
+                  </div>
+                </div>
+              </div>
+              <h3>Border</h3>
+              <ul>
+                <li>
+                  The border is drawn between the margin and the padding of a
+                  box.
+                </li>
+                <li>
+                  If you are using the standard box model, the size of the
+                  border is added to the width and height of the box. I
+                </li>
+                <li>
+                  If you are using the alternative box model then the size of
+                  the border makes the content box smaller as it takes up some
+                  of that available width and height.
+                </li>
+                <li>
+                  For styling borders, there are a large number of properties —
+                  there are four borders, and each border has a style, width and
+                  color that we might want to manipulate.
+                </li>
+                <li>
+                  The same top, right, bottom, left shorthand applies; You'll
+                  often seem somethign like
+                  <code>border: solid 1px blue</code> as a shorthand as well;
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="/index.js"></script>
+  </body>
+</html>
+
+<!-- <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Notes</title>
+  </head>
+  <body>
+    <h1 style="background-color: darkblue; color: white">
+      I am built with inline styles
+    </h1>
+    <h2>I am styled with the tag below</h2>
+    <h3 class="class" id="id">class and ID</h3>
+
+    <style>
+      h2 {
+        padding: 50px;
+        background: lightseagreen;
+      }
+    </style>
+  </body>
+</html> -->
