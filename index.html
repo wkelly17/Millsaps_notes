@@ -3,6 +3,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CssNotes/css/utilities.css" />
     <link rel="stylesheet" href="./CssNotes/css/styles.css" />
     <title>Millsaps Notes</title>
   </head>
@@ -10,7 +11,7 @@
     <!-- ../ = go back -->
     <!-- / forward from where I"m from -->
     <nav class="nav">
-      <ul class="topNav">
+      <ul class="topNav_ul">
         <li><a href="#inheritance" class="navlink">Inheritance</a></li>
         <li><a href="#cascadeSummary" class="navlink">Cascade Summary</a></li>
         <li><a href="#@rules" class="navlink">@rules/basic functions</a></li>
@@ -39,6 +40,12 @@
         <li>
           <a href="#Boxmodel" class="navlink">The box model</a>
         </li>
+        <li>
+          <a href="#inlineBlocks" class="navlink">Inline Blocks</a>
+        </li>
+        <li>
+          <a href="#Overflow" class="navlink">Overflow</a>
+        </li>
       </ul>
     </nav>
     <div class="mx-auto" style="padding-top: 10px">
@@ -47,7 +54,7 @@
       <section class="example">
         <h2 id="inheritance" title="" class="heading">Inheritance</h2>
 
-        <ul class="main">
+        <ul class="inheritanceParent1">
           <li>Child One</li>
           <li>
             Child Two
@@ -58,7 +65,7 @@
           </li>
           <li>
             Item Three
-            <ul class="special">
+            <ul class="inheritanceParent2">
               <li>
                 3.1
                 <ul>
@@ -196,7 +203,7 @@
             <li>@keyframes - a rule for creating animation sequences</li>
             <li>@font-face - including an external font (other ways too)</li>
           </ul>
-          <h4 class="blue slide">
+          <h4 class="mediaQueryExample slide">
             I have a @ media query and that will change my color and @keyframes
             for animation. (Click me to stop moving)
           </h4>
@@ -387,7 +394,7 @@
             </p>
             <p class="border">
               I am another. Some of my words
-              <span class="normal border boxModel blockToInline"
+              <span class="border normal boxModel blockToInline"
                 >Have been wrapped</span
               >
               in a span. Spans and A tags are inline by default;
@@ -415,10 +422,10 @@
               <div class="box box2" style="margin: 100px">I sit inline,</div>
               <div class="box box3">I am 3</div>
             </div>
-            <button class="toggleFlex mt-2">Toggle Flex</button>
+            <button class="mt-2 toggleFlex">Toggle Flex</button>
             <span>Display is flex</span>
           </div>
-          <div id="theBoxModel">
+          <div id="Boxmodel">
             <h2>The Box Model</h2>
             <img src="./CssNotes/media/box-model.png" alt="boxModel" />
             <h3>The Standard Box model</h3>
@@ -556,10 +563,10 @@
                         value="0"
                       />
 
-                      <label for="marginTop" class="block">All Margins</label>
+                      <label for="All_Margins" class="block">All Margins</label>
                       <input
                         type="number"
-                        id="margin-top"
+                        id="All_Margins"
                         name="margin"
                         class="margin-controller"
                         min="-500"
@@ -577,7 +584,7 @@
                     negative, it subtracts for the other;
                   </p>
 
-                  <div id="outerBox" class="border mt-2">
+                  <div id="outerBox" class="mt-2 border">
                     <div class="box box2" style="margin-bottom: 50px">
                       My bottom margin is 50px
                     </div>
@@ -622,7 +629,7 @@
                   </div>
                   <div>
                     <div>
-                      <label for="paddingTop">padding Top </label>
+                      <label for="paddingTop" class="block">padding Top </label>
                       <input
                         type="number"
                         id="padding-top"
@@ -633,7 +640,9 @@
                         value="50"
                       />
 
-                      <label for="paddingRight">padding Right </label>
+                      <label for="paddingRight" class="block"
+                        >padding Right
+                      </label>
                       <input
                         type="number"
                         name="paddingRight"
@@ -643,7 +652,9 @@
                         value="50"
                       />
 
-                      <label for="paddingBottom">padding Bottom </label>
+                      <label for="paddingBottom" class="block"
+                        >padding Bottom
+                      </label>
                       <input
                         type="number"
                         name="paddingBottom"
@@ -653,7 +664,9 @@
                         value="50"
                       />
 
-                      <label for="paddingLeft">padding Left </label>
+                      <label for="paddingLeft" class="block"
+                        >padding Left
+                      </label>
                       <input
                         type="number"
                         name="paddingLeft"
@@ -662,8 +675,31 @@
                         max="500"
                         value="50"
                       />
+                      <label for="All_Paddings" class="block"
+                        >All Paddings</label
+                      >
+                      <input
+                        type="number"
+                        id="All_Paddings"
+                        name="padding"
+                        class="padding-controller"
+                        min="-500"
+                        max="500"
+                        value="0"
+                      />
                     </div>
                   </div>
+                </div>
+                <div id="alinkPaddingExample" style="margin-top: 50px">
+                  <h4>A Padding and Link tip (Bigger hitboxes)</h4>
+                  <a href="#" style="background: green; color: white"
+                    >Without Padding</a
+                  >
+                  <a
+                    href="#"
+                    style="padding: 20px; background: blue; color: white"
+                    >With Padding</a
+                  >
                 </div>
               </div>
 
@@ -675,29 +711,281 @@
                     box.
                   </li>
                   <li>
-                    If you are using the standard box model, the size of the
-                    border is added to the width and height of the box. I
+                    If you are using the <b>standard box model</b> , the size of
+                    the border is added to the width and height of the box. I
                   </li>
                   <li>
-                    If you are using the alternative box model then the size of
-                    the border makes the content box smaller as it takes up some
-                    of that available width and height.
+                    If you are using the <b>alternative box model </b> then the
+                    size of the border makes the <b> content box smaller </b> as
+                    it takes up some of that available width and height.
                   </li>
                   <li>
                     For styling borders, there are a large number of properties
-                    — there are four borders, and each border has a style, width
-                    and color that we might want to manipulate.
+                    — there are four borders, and each border has a
+                    <b> style, width and color </b> that we might want to
+                    manipulate.
                   </li>
                   <li>
                     The same top, right, bottom, left shorthand applies; You'll
                     often seem somethign like
                     <code>border: solid 1px blue</code> as a shorthand as well;
                   </li>
+                  <li>
+                    <pre>
+        <code>
+          border-(side)-width: value;
+          border-(top, right,bottom,left)-style: value;
+          border-color: value;
+        </code>
+      | = "or"
+        Styles: = none | hidden | dotted 
+        | dashed | solid | double | groove 
+        | ridge | inset | outset
+      </pre>
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
+        <div id="inlineBlocks">
+          <h2>Inline blocks - A middle ground</h2>
+          <p>
+            For inline items to respect width, height, and avoid horizontal
+            overlapping.
+          </p>
+          <p class="border">
+            I am a sentence. Some of my words
+            <span class="inline-block border normal inline-block-example"
+              >Have been wrapped</span
+            >
+            in a span. Spans and A tags are inline by default;
+            <button class="block toggleInlineBlock" style="margin-top: 5px">
+              Toggle the span between inline-block and inline
+            </button>
+            <span> Display is inline-block; </span>
+          </p>
+        </div>
+      </section>
+      <!-- todo: https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units:   Check bottom -->
+      <section id="Overflow">
+        <h2>A brief note on overflowing content and the box model;</h2>
+        <p>
+          Overflow is what happens when there is too much content to fit in a
+          box
+        </p>
+        <p class="border" style="height: 25px">
+          I overflow vertically due to a set height; Lorem ipsum dolor sit amet
+          consectetur; Lorem, ipsum dolor.
+        </p>
+
+        <p class="border" style="width: 25px; margin-top: 50px">
+          Width overflow due to static width:
+        </p>
+
+        <p>
+          CSS is trying to prevent data loss;
+          <u
+            >As MDN Summarizes - "If you restrict a box with a width or a
+            height, CSS trusts you to know what you are doing and assumes you
+            are managing for overflow."
+          </u>
+        </p>
+        <p>
+          Today, many methods of position elements dont' require fixing static
+          heights. Using fixed-heights is typically not a great practice unless
+          vertical scrolling is purposely desired; (Adjusting width is a good
+          bit more common);
+        </p>
+        <div class="flex justify-around p-5 border interactiveExample">
+          <div
+            data-cssprop="overflow"
+            data-queryName="overflowExample"
+            class="border"
+            style="width: 50px; height: 20px; font-size: 25px"
+          >
+            <p class="m-0">Lorem ipsum dolor</p>
+          </div>
+          <div data-name="radio-holder">
+            <div>
+              <label for="auto">overflow:auto;</label>
+              <input
+                data-queriesFor="overflowExample"
+                data-role="interactiveInput"
+                data-cssmutated="overflow"
+                type="radio"
+                name="overflow"
+                id="auto"
+                value="auto"
+              />
+            </div>
+            <div>
+              <label for="visible">overflow: visible</label>
+              <input
+                data-queriesFor="overflowExample"
+                data-role="interactiveInput"
+                data-cssmutated="overflow"
+                type="radio"
+                name="overflow"
+                id="visible"
+                value="visible"
+              />
+            </div>
+            <div>
+              <label for="hidden">overflow: Hidden</label>
+              <input
+                data-queriesFor="overflowExample"
+                data-role="interactiveInput"
+                data-cssmutated="overflow"
+                type="radio"
+                name="overflow"
+                id="hidden"
+                value="hidden"
+              />
+            </div>
+            <div>
+              <label for="scroll">overflow: scroll</label>
+              <input
+                data-queriesFor="overflowExample"
+                data-role="interactiveInput"
+                type="radio"
+                name="overflow"
+                id="scroll"
+                value="scroll"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="valuesAndUnits">
+        <h2>Common Values and Units</h2>
+        <h3>Most common Lengths</h3>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Unit</th>
+              <th scope="col">Name</th>
+              <th scope="col">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: center" colspan="3">Absolute Units</td>
+            </tr>
+            <tr>
+              <td><code>px</code></td>
+              <td>Pixels</td>
+              <td>
+                1px = 1/96th of 1in or 1 tiny square dot of light on your screen
+              </td>
+            </tr>
+            <tr>
+              <td style="text-align: center" colspan="3">relative Units</td>
+            </tr>
+            <tr>
+              <td><code>em</code></td>
+              <td colspan="2">
+                Font size of the parent, in the case of typographical properties
+                like font-size, and font size of the element itself, in the case
+                of other properties like width.
+              </td>
+            </tr>
+            <tr>
+              <td><code>rem</code></td>
+              <td colspan="2">Font size of the root element.</td>
+            </tr>
+            <tr>
+              <td><code>%</code></td>
+              <td colspan="2">
+                A percentage of the parent with respect to that property; (e.g.
+                50% of 400px or 80% of 100% width);
+              </td>
+            </tr>
+            <tr>
+              <td><code>vw</code></td>
+              <td colspan="2">1% of the viewport's width.</td>
+            </tr>
+            <tr>
+              <td><code>vh</code></td>
+              <td colspan="2">1% of the viewport's height.</td>
+            </tr>
+            <tr>
+              <td><code>ch</code></td>
+              <td colspan="2">
+                The advance measure (width) of the glyph "0" of the element's
+                font.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="p-5 my-3 border interactiveExample box box1">
+          <div data-name="widths-holder">
+            <div
+              data-cssprop="width"
+              data-queryName="widthExample"
+              class="border box2"
+            >
+              <p class="m-0">Lorem ipsum dolor</p>
+            </div>
+            <div>
+              <label for="widthmutater1"
+                >Try changing the width using px, vw, em, or rem</label
+              >
+              <input
+                data-queriesFor="widthExample"
+                data-role="interactiveInput"
+                data-cssmutated="width"
+                type="text"
+                name="widthmutater1"
+                id="auto"
+              />
+            </div>
+            <div
+              data-cssprop="width"
+              data-queryName="widthExample2"
+              class="border box3"
+            >
+              <p class="m-0" style="font-size: 20px">Box2 font-size: 20px</p>
+            </div>
+            <div>
+              <label for="widthmutater1"
+                >Try changing the width using px, vw, em, rem, or
+                percentage</label
+              >
+              <input
+                data-queriesFor="widthExample2"
+                data-role="interactiveInput"
+                data-cssmutated="width"
+                type="text"
+                name="widthmutater1"
+                id=""
+                placeholder="30%"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="SizingItems">
+        <h2>Sizing Items</h2>
+      </section>
+      <section id="SizingItems">
+        <h2>Images, Media, form elements (maybe... brief here)</h2>
+      </section>
+      <section id="SizingItems">
+        <h2>A note on being organized and (vars)</h2>
+        <!-- https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Organizing -->
+      </section>
+      <section id="SizingItems">
+        <h2>Styling Text</h2>
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text"
+        ></a>
+      </section>
+      <section id="SizingItems">
+        <h2>Laying Out Items</h2>
+        <!-- many sections here; -->
+        <!-- https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout -->
       </section>
     </div>
 

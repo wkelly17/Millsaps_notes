@@ -27,7 +27,6 @@ oneAtATimeContainers.forEach((container) =>
 );
 
 let makeBlock = document.querySelector('.makeBlock');
-
 makeBlock.addEventListener('click', (e) => {
   console.log(e.target.previousElementSibling);
   e.target.previousElementSibling.classList.toggle('block');
@@ -63,6 +62,34 @@ paddingController.forEach((one) =>
     let val = e.target.value;
     let prop = e.target.name;
     paddingbox.style[prop] = val;
+  })
+);
+
+let toggleInlineBlock = document.querySelector('.toggleInlineBlock');
+toggleInlineBlock.addEventListener('click', (e) => {
+  e.target.previousElementSibling.classList.toggle('inline-block');
+  console.log(e.target.previousElementSibling.style);
+  e.target.nextElementSibling.innerText = e.target.previousElementSibling.classList.contains(
+    'inline-block'
+  )
+    ? 'Display is inline-block'
+    : 'Display is inline';
+});
+
+let interactiveExamples = document.querySelectorAll('.interactiveExample');
+let interactiveInputs = document.querySelectorAll(
+  '[data-role = "interactiveInput"]'
+);
+
+interactiveInputs.forEach((input) =>
+  input.addEventListener('change', (e) => {
+    let target = e.target;
+    let value = e.target.value;
+    let query = target.dataset.queriesfor;
+    let propItMutates = target.dataset.cssmutated;
+    let pickedExample = document.querySelector(`[data-queryName = ${query}]`);
+    // let cssProp = pickedExample.dataset.cssprop;
+    pickedExample.style[propItMutates] = value;
   })
 );
 
