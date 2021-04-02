@@ -156,3 +156,11 @@ span {
 .toggleInlineBlock {
   margin-bottom: 10px;
 }
+
+.ems li {
+  font-size: 1.3em;
+}
+
+.rems li {
+  font-size: 1.3rem;
+}

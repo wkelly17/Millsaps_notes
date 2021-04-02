@@ -46,6 +46,12 @@
         <li>
           <a href="#Overflow" class="navlink">Overflow</a>
         </li>
+        <li>
+          <a href="#valuesAndUnits" class="navlink">Sizing, values, Units</a>
+        </li>
+        <li>
+          <a href="#emsVrems" class="navlink">Ems vs rems</a>
+        </li>
       </ul>
     </nav>
     <div class="mx-auto" style="padding-top: 10px">
@@ -925,8 +931,9 @@
               data-cssprop="width"
               data-queryName="widthExample"
               class="border box2"
+              style="font-size: 16px"
             >
-              <p class="m-0">Lorem ipsum dolor</p>
+              <p class="m-0">box 1: font-size: 16px;</p>
             </div>
             <div>
               <label for="widthmutater1"
@@ -945,8 +952,9 @@
               data-cssprop="width"
               data-queryName="widthExample2"
               class="border box3"
+              style="font-size: 20px"
             >
-              <p class="m-0" style="font-size: 20px">Box2 font-size: 20px</p>
+              <p class="m-0">Box2 font-size: 20px</p>
             </div>
             <div>
               <label for="widthmutater1"
@@ -964,6 +972,98 @@
               />
             </div>
           </div>
+        </div>
+        <div data-name="height-holder">
+          <div
+            data-cssprop="height"
+            data-queryName="heightExample"
+            class="border box2"
+          >
+            <p class="m-0">Lorem ipsum dolor</p>
+          </div>
+          <div>
+            <label for="widthmutater1"
+              >Try changing the height using px, vw, em, or rem</label
+            >
+            <input
+              data-queriesFor="heightExample"
+              data-role="interactiveInput"
+              data-cssmutated="height"
+              type="text"
+              name="widthmutater1"
+              id="auto"
+            />
+          </div>
+          <div
+            data-cssprop="width"
+            data-queryName="widthExample2"
+            class="border box3"
+          >
+            <p class="m-0" style="font-size: 20px">Box2 font-size: 20px</p>
+          </div>
+          <div>
+            <label for="widthmutater1"
+              >Try changing the height using px, vw, em, rem, or
+              percentage</label
+            >
+            <input
+              data-queriesFor="widthExample2"
+              data-role="interactiveInput"
+              data-cssmutated="height"
+              type="text"
+              name="heightmutater1"
+              id=""
+              placeholder="30%"
+            />
+          </div>
+        </div>
+        <div id="emsVrems">
+          <ul class="ems">
+            <li>One</li>
+            <li>Two</li>
+            <li>
+              Three
+              <ul>
+                <li>Three A</li>
+                <li>
+                  Three B
+                  <ul>
+                    <li>Three B 2</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="rems">
+            <li>One</li>
+            <li>Two</li>
+            <li>
+              Three
+              <ul>
+                <li>Three A</li>
+                <li>
+                  Three B
+                  <ul>
+                    <li>Three B 2</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <pre>
+      html {
+        font-size: 16px;
+      }
+      
+      .ems li {
+        font-size: 1.3em;
+      }
+      
+      .rems li {
+        font-size: 1.3rem;
+      }             
+    </pre
+          >
         </div>
       </section>
       <section id="SizingItems">
