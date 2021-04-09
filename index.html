@@ -924,100 +924,29 @@
             </tr>
           </tbody>
         </table>
+        <h4>
+          See the
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units"
+            >MDN units reference</a
+          >
+          here; (Hard to summarize better) Has details on other keywords and
+          colors
+        </h4>
+      </section>
+      <section id="SizingItems">
+        <h2>Sizing Items - Height, Width, max-min</h2>
+        <p>
+          I'm not the best at design: The summary I try to keep in mind for
+          myself is from a UI/UX developer named Gary Simon is this:
+          <i>
+            The fundamentals are: White space, alignment, contrast, scale,
+            typography, color, and visual hierarchy
+          </i>
+        </p>
 
-        <div class="p-5 my-3 border interactiveExample box box1">
-          <div data-name="widths-holder">
-            <div
-              data-cssprop="width"
-              data-queryName="widthExample"
-              class="border box2"
-              style="font-size: 16px"
-            >
-              <p class="m-0">box 1: font-size: 16px;</p>
-            </div>
-            <div>
-              <label for="widthmutater1"
-                >Try changing the width using px, vw, em, or rem</label
-              >
-              <input
-                data-queriesFor="widthExample"
-                data-role="interactiveInput"
-                data-cssmutated="width"
-                type="text"
-                name="widthmutater1"
-                id="auto"
-              />
-            </div>
-            <div
-              data-cssprop="width"
-              data-queryName="widthExample2"
-              class="border box3"
-              style="font-size: 20px"
-            >
-              <p class="m-0">Box2 font-size: 20px</p>
-            </div>
-            <div>
-              <label for="widthmutater1"
-                >Try changing the width using px, vw, em, rem, or
-                percentage</label
-              >
-              <input
-                data-queriesFor="widthExample2"
-                data-role="interactiveInput"
-                data-cssmutated="width"
-                type="text"
-                name="widthmutater1"
-                id=""
-                placeholder="30%"
-              />
-            </div>
-          </div>
-        </div>
-        <div data-name="height-holder">
-          <div
-            data-cssprop="height"
-            data-queryName="heightExample"
-            class="border box2"
-          >
-            <p class="m-0">Lorem ipsum dolor</p>
-          </div>
-          <div>
-            <label for="widthmutater1"
-              >Try changing the height using px, vw, em, or rem</label
-            >
-            <input
-              data-queriesFor="heightExample"
-              data-role="interactiveInput"
-              data-cssmutated="height"
-              type="text"
-              name="widthmutater1"
-              id="auto"
-            />
-          </div>
-          <div
-            data-cssprop="width"
-            data-queryName="widthExample2"
-            class="border box3"
-          >
-            <p class="m-0" style="font-size: 20px">Box2 font-size: 20px</p>
-          </div>
-          <div>
-            <label for="widthmutater1"
-              >Try changing the height using px, vw, em, rem, or
-              percentage</label
-            >
-            <input
-              data-queriesFor="widthExample2"
-              data-role="interactiveInput"
-              data-cssmutated="height"
-              type="text"
-              name="heightmutater1"
-              id=""
-              placeholder="30%"
-            />
-          </div>
-        </div>
         <div id="emsVrems">
+          <h3>A note on a sizing unit - Ems vs rems</h3>
           <ul class="ems">
             <li>One</li>
             <li>Two</li>
@@ -1050,6 +979,7 @@
               </ul>
             </li>
           </ul>
+
           <pre>
       html {
         font-size: 16px;
@@ -1064,18 +994,170 @@
       }             
     </pre
           >
+          <p>
+            To recap, the em unit means "my parent element's font-size" in the
+            case of typography or my own font size for properties like width;
+          </p>
+          <p>
+            To recap, the rem unit means "The root element's font-size". (rem
+            stands for "root em".)
+          </p>
         </div>
-      </section>
-      <section id="SizingItems">
-        <h2>Sizing Items - Height and Width</h2>
-        <p>
-          I'm not the best at design: The summary I try to keep in mind for
-          myself is from a UI/UX developer named Gary Simon is this:
-          <cite>
-            The fundamentals are: White space, alignment, contrast, scale,
-            typography, color, and visual hierarchy
-          </cite>
-        </p>
+        <div>
+          <h3>
+            Elements have an natural size - how much content you put in them or
+            it's intrinsic size
+          </h3>
+          <p>Natural size is 640 x 480</p>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Millsaps_College.jpg"
+            alt="Millsaps College"
+          />
+          <p>
+            style tag sets the width at 150; Height adjust automatically to
+            maintain aspect ratio
+          </p>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Millsaps_College.jpg"
+            alt="Millsaps College"
+            style="width: 150px"
+          />
+          <p>
+            style tag sets the width at 60%; Height adjust automatically to
+            maintain aspect ratio
+          </p>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Millsaps_College.jpg"
+            alt="Millsaps College"
+            style="width: 60%"
+          />
+        </div>
+        <div class="p-5 my-3 border interactiveExample box box1">
+          <h3>Example boxes for widths sizing</h3>
+          <div data-name="widths-holder">
+            <div
+              data-cssprop="width"
+              data-queryName="widthExample"
+              class="border box2"
+              style="font-size: 16px"
+            >
+              <p class="m-0">box 1: font-size: 16px;</p>
+            </div>
+            <div>
+              <label for="widthmutater1"
+                >Try changing the width using px, vw, em, or rem</label
+              >
+              <input
+                data-queriesFor="widthExample"
+                data-role="interactiveInput"
+                data-cssmutated="width"
+                type="text"
+                name="widthmutater1"
+                id="auto"
+              />
+            </div>
+            <div
+              data-cssprop="width"
+              data-queryName="widthExample2"
+              class="border box3"
+              style="font-size: 20px"
+            >
+              <p class="m-0">Box2 font-size: 20px</p>
+            </div>
+            <div>
+              <label for="widthmutater2"
+                >Try changing the width using px, vw, em, rem, or
+                percentage</label
+              >
+              <input
+                data-queriesFor="widthExample2"
+                data-role="interactiveInput"
+                data-cssmutated="width"
+                type="text"
+                name="widthmutater2"
+                id=""
+                placeholder="30%"
+              />
+            </div>
+          </div>
+        </div>
+        <div data-name="height-holder">
+          <h3>Example boxes for height sizing</h3>
+          <div
+            data-cssprop="height"
+            data-queryName="heightExample"
+            class="border box2"
+          >
+            <p class="m-0">Lorem ipsum dolor</p>
+          </div>
+          <div>
+            <label for="heightmutater3"
+              >Try changing the height using px, vw, em, or rem</label
+            >
+            <input
+              data-queriesFor="heightExample"
+              data-role="interactiveInput"
+              data-cssmutated="height"
+              type="text"
+              name="widthmutater3"
+              id="auto"
+            />
+          </div>
+          <div
+            data-cssprop="width"
+            data-queryName="heightExample2"
+            class="border box3"
+          >
+            <p class="m-0" style="font-size: 20px">Box2 font-size: 20px</p>
+          </div>
+          <div>
+            <label for="widthmutater1"
+              >Try changing the height using px, vw, em, rem, or
+              percentage</label
+            >
+            <input
+              data-queriesFor="heightExample2"
+              data-role="interactiveInput"
+              data-cssmutated="height"
+              type="text"
+              name="heightmutater1"
+              id=""
+              placeholder="30%"
+            />
+          </div>
+        </div>
+        <div>
+          <h3>max-width: value; min-width: value;</h3>
+          <div class="border" style="min-width: 400px; max-width: 600px">
+            I have a min width of 400px and max of 600;
+          </div>
+          <div class="border" style="width: 90%; max-width: 800px">
+            I have a width of 90% and max of 800px;
+          </div>
+
+          <div
+            class="border"
+            style="width: 90%; max-width: 600px; margin-top: 30px"
+          >
+            <p>intrinsic picture size, BUT box has a max-width of 600px</p>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Millsaps_College.jpg"
+              alt="Millsaps College"
+            />
+          </div>
+
+          <div
+            class="border"
+            style="width: 90%; max-width: 800px; margin-top: 30px"
+          >
+            <p>style tag sets the max width to 100%</p>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Millsaps_College.jpg"
+              alt="Millsaps College"
+              style="max-width: 100%"
+            />
+          </div>
+        </div>
       </section>
       <section id="SizingItems">
         <h2>Images, Media, form elements (maybe... brief here)</h2>
